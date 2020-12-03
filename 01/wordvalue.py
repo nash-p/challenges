@@ -1,9 +1,12 @@
-from data import DICTIONARY as DefaultFile
+from data import DICTIONARY
 from data import LETTER_SCORES as SCORES_DICT
 
 def load_words():
-    """Load dictionary into a list and return list"""
-    pass
+    """Load DICTIONARY file contents into a list and return list"""
+    with open(DICTIONARY, 'r') as file:
+        content = file.readlines()
+        wordlist = [line.strip() for line in content]
+        return wordlist
 
 def calc_word_value():
     """Calculate the value of the word entered into function
