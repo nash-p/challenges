@@ -16,9 +16,9 @@ def calc_word_value(word):
     using imported constant mapping LETTER_SCORES"""
     value = 0
 
-    #This is necessary for things like apostrophes and hyphens
+    #This is necessary for things like apostrophes and hyphens)
     regex = re.compile('[^a-zA-Z]')
-    regex.sub('', word)
+    word = regex.sub('', word)
     letters = list(word.upper())
 
     for i in letters:
