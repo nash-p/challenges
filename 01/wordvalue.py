@@ -27,10 +27,14 @@ def calc_word_value(word):
     return value
     
 
-def max_word_value(wordlist=load_words()):
+def max_word_value(wordlist=None):
     """Calculate the word with the max value, can receive a list
     of words as arg, if none provided uses default DICTIONARY
     NOTE: It does not return multiple words of equal value"""
+
+    if not wordlist:
+        wordlist = load_words()
+
     old_word_value = 0
     for word in wordlist:
         word_value = calc_word_value(word)
